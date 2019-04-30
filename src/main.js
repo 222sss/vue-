@@ -1,6 +1,5 @@
 import Vue from "vue";
-// // 引入ElementUI
-// import ElementUI from "element-ui";
+// 引入ElementUI
 import {
   Select,
   Loading,
