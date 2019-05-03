@@ -1,0 +1,91 @@
+@mixin common {
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@mixin a-common {
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 255);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+  }
+
+  a:link,
+  a:hover,
+  a:active,
+  a:visited {
+    text-decoration: none;
+  }
+}
+
+@mixin ul-common {
+  ul {
+    list-style: none;
+  }
+}
+
+// Color
+$color-fff: #ffffff;
+$font-color-6: #666666;
+
+// 背景
+@mixin diy-bg($img, $posX, $posY, $color: transparent) {
+  background: $color url(../assets/img/#{$img}) no-repeat $posX $posY;
+}
+@mixin diyBg-relative($path, $img, $posX, $posY, $color: transparent) {
+  background: $color url(#{$path}assets/img/#{$img}) no-repeat $posX $posY;
+}
+@mixin bg-color($color) {
+  background-color: $color;
+}
+@mixin bg-color-transparent($color, $alpha) {
+  background-color: rgba($color, $alpha);
+}
+
+// flex
+@mixin flex {
+  display: flex;
+  display: -webkit-flex;
+}
+@mixin flex-column {
+  flex-direction: column;
+  -ms-flex-direction: column;
+}
+@mixin flex-primary-axis-between {
+  justify-content: space-between;
+}
+@mixin flex-primary-axis-center {
+  justify-content: center;
+}
+@mixin flex-primary-axis-end {
+  justify-content: flex-end;
+}
+@mixin flex-secondary-axis-center {
+  align-items: center;
+}
+@mixin flex-secondary-axis-end {
+  align-items: flex-end;
+}
+@mixin flex-wrap {
+  flex-wrap: wrap;
+}
+
+// 旋转
+@mixin transform-rotate($deg) {
+  transform: rotate($deg * 1deg);
+  -ms-transform: rotate($deg * 1deg);
+  -moz-transform: rotate($deg * 1deg);
+  -webkit-transform: rotate($deg * 1deg);
+  -o-transform: rotate($deg * 1deg);
+}

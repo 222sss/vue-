@@ -4,7 +4,19 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {}
+  state: {
+    // 登录账号名字
+    userName: null
+  },
+  mutations: {
+    changNameMutations: function(state, name) {
+      state.userName = name;
+      window.localStorage.setItem("name", name);
+    }
+  },
+  actions: {
+    changName: function(NAME, name) {
+      NAME.commit("changNameMutations", name);
+    }
+  }
 });

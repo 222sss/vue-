@@ -10,7 +10,10 @@ module.exports = {
   outputDir: "dist",
   assetsDir: "static",
   configureWebpack: config => {
-    config.externals = {};
+    config.externals = {
+      "BMap": "BMap",
+      "echarts": "echarts"
+    };
   },
   // webpack 配置
   chainWebpack: config => {
@@ -18,6 +21,7 @@ module.exports = {
       .set("@$", resolve("src"))
       .set("assets", resolve("src/assets"))
       .set("components", resolve("src/components"))
+      .set("utils", resolve("src/utils"));
   },
   // webpack-dev-server 配置
   devServer: {

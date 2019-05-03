@@ -1,0 +1,16 @@
+/* 
+@font-face {  
+  font-family: "PasswordEntry";
+  src: url("./PasswordEntry.ttf");
+  font-weight: normal;  
+  font-style: normal;  
+} */
+
+@font-face {
+  font-family: "PasswordEntry";
+  src: url('PasswordEntry.eot?t=1548394240732'); /* IE9 */
+  src: url('PasswordEntry.eot?t=1548394240732#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url("PasswordEntry.ttf?t=1548394240732")  format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  font-weight: normal;
+  font-style: normal;
+}
