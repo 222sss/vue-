@@ -11,7 +11,7 @@ export default new Vuex.Store({
   mutations: {
     changNameMutations: function(state, name) {
       state.userName = name;
-      window.localStorage.setItem("name", name);
+      window.localStorage.setItem("username", name);
     }
   },
   actions: {

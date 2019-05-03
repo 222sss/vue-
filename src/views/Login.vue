@@ -150,6 +150,7 @@ export default {
 
 .login {
   @include diy-bg("/login/total_bg.png", center, center);
+  background-size: cover;
   @include flex;
   @include flex-column;
   @include flex-primary-axis-between;
