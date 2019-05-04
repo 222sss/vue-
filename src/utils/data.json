@@ -1,0 +1,39 @@
+{
+  "basisPlatformNavs": [
+    {
+      "id": 1,
+      "text": "重要建筑",
+      "router": "aaa"
+    },
+    {
+      "id": 2,
+      "text": "社会单位",
+      "router": ""
+    },
+    {
+      "id": 3,
+      "text": "产品厂家",
+      "router": ""
+    },
+    {
+      "id": 4,
+      "text": "服务机构",
+      "router": ""
+    },
+    {
+      "id": 5,
+      "text": "消防力量",
+      "router": ""
+    },
+    {
+      "id": 6,
+      "text": "联动力量",
+      "router": ""
+    },
+    {
+      "id": 7,
+      "text": "消防水源",
+      "router": ""
+    }
+  ]
+}
