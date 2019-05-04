@@ -75,6 +75,7 @@ export default {
     };
   },
   computed: {
+    // 时间
     timer: function() {
       let timer = "";
       let timers = getDays();
@@ -89,6 +90,7 @@ export default {
         timers.days;
       return timer;
     },
+    // 用户名
     userName: function() {
       let localData = window.localStorage.getItem("username");
       if (this.$store.state.userName === null && localData) {

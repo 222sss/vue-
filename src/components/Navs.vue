@@ -16,10 +16,12 @@
 export default {
   name: "Navs",
   props: {
+    // 自定义class
     diyClass: {
       type: String,
       default: ""
     },
+    // 导航
     navs: {
       type: Array,
       default: function() {
@@ -29,17 +31,12 @@ export default {
   },
   data: function() {
     return {
-      active: "aaa"
+      // 选中
+      active: ""
     };
   },
-  computed: {
-    // navs: function() {
-    //   let navs = [];
-    //   navs = navsList.basisPlatformNavs;
-    //   return navs;
-    // }
-  },
   methods: {
+    // 修改选中跳转路由
     change: function(router) {
       this.$router.push({ path: `/${router}` });
       this.active = router;

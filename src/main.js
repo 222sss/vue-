@@ -56,6 +56,8 @@ router.beforeEach((to, from, next) => {
   }
 });
 
+import { duration } from "./utils/global";
+
 new Vue({
   methods: {
     /*
@@ -68,28 +70,28 @@ new Vue({
       switch (type) {
         case "success":
           Message.success({
-            duration: 3000,
+            duration: duration,
             message: `${msg}！`,
             showClose: showClose
           });
           break;
         case "error":
           Message.error({
-            duration: 3000,
+            duration: duration,
             message: `${msg}！`,
             showClose: showClose
           });
           break;
         case "warning":
           Message.warning({
-            duration: 3000,
+            duration: duration,
             message: `${msg}！`,
             showClose: showClose
           });
           break;
         default:
           Message.info({
-            duration: 3000,
+            duration: duration,
             message: `${msg}！`,
             showClose: showClose
           });
