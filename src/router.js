@@ -18,7 +18,24 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Home,
+      redirect: "basisPlatform", // 重定向
+      children: [
+        // 基础平台主页
+        {
+          path: "/basisPlatform",
+          name: "basisPlatform",
+          component: () =>
+            import(/* webpackChunkName: "BasisPlatform" */ "./views/BasisPlatform.vue")
+        },
+        // 责任平台主页
+        {
+          path: "/responsibility",
+          name: "responsibility",
+          component: () =>
+            import(/* webpackChunkName: "Responsibility" */ "./views/Responsibility.vue")
+        }
+      ]
     }
   ]
 });

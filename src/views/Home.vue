@@ -35,9 +35,20 @@
           @mousemove="mousemoveF1"
           @mouseout="mouseoutF"
         >
-          <img src="../assets/img/home/jichu2.png" class="jichu2" />
-          <img src="../assets/img/home/zeren.png" class="zeren" />
+          <img
+            src="../assets/img/home/jichu2.png"
+            class="jichu2"
+            @click="basisPlatformF"
+          />
+          <img
+            src="../assets/img/home/zeren.png"
+            class="zeren"
+            @click="responsibilityF"
+          />
         </div>
+      </div>
+      <div class="content-box w100 h100">
+        <router-view ref="child"></router-view>
       </div>
     </div>
   </div>
@@ -115,6 +126,21 @@ export default {
     },
     mouseoutF: function() {
       this.show = true;
+    },
+    // 基础平台
+    basisPlatformF: function() {
+      this.$router.push({ path: "/basisPlatform" });
+    },
+    // 责任平台
+    responsibilityF: function() {
+      this.$router.push({ path: "/responsibility" });
+    },
+    // 触发页面改变大小
+    callResize: function() {
+      const child = this.$refs["child"];
+      if (child && typeof child.callResize === "function") {
+        child.callResize();
+      }
     }
   },
   mounted: function() {
@@ -137,7 +163,6 @@ export default {
 
   .title-img {
     width: 100%;
-    height: 62px;
   }
 
   .home-title {
@@ -193,8 +218,12 @@ export default {
     overflow: hidden;
     box-sizing: border-box;
     padding: 25px;
+    position: relative;
 
     .change-plate {
+      position: absolute;
+      top: 25px;
+      left: 25px;
       z-index: 999;
 
       .jichubox {
