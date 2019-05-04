@@ -2,21 +2,36 @@
 <template>
   <div class="basisPlatform w100 h100">
     <div class="navs h100">
-      <navs></navs>
+      <navs v-bind:navs="navsList"></navs>
     </div>
     <div class="content h100">
-      123
+      <router-view ref="child"></router-view>
     </div>
   </div>
 </template>
 
 <script>
 import Navs from "components/Navs";
+import navsList from "utils/data";
 
 export default {
   name: "BasisPlatform",
   components: {
     Navs
+  },
+  data: function() {
+    return {
+      navsList: navsList.basisPlatformNavs
+    };
+  },
+  methods: {
+    // 触发页面改变大小
+    callResize: function() {
+      const child = this.$refs["child"];
+      if (child && typeof child.callResize === "function") {
+        child.callResize();
+      }
+    }
   }
 };
 </script>
@@ -31,7 +46,6 @@ export default {
   .navs {
     width: 117px;
     margin-right: 30px;
-    border: 1px solid red;
   }
 
   .content {

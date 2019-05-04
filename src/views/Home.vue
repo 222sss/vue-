@@ -27,7 +27,12 @@
       <div class="change-plate">
         <div class="jichubox" v-show="show">
           <div class="choosebox" @mousemove="mousemoveF"></div>
-          <img src="../assets/img/home/jichu1.png" class="jichu1" />
+          <img
+            v-if="showjc"
+            src="../assets/img/home/jichu1.png"
+            class="jichu1"
+          />
+          <img v-else src="../assets/img/home/zeren1.png" class="jichu1" />
         </div>
         <div
           v-show="!show"
@@ -65,7 +70,8 @@ export default {
     return {
       realTime: "",
       refreshTime: null,
-      show: true
+      show: true,
+      showjc: true
     };
   },
   computed: {
@@ -129,10 +135,12 @@ export default {
     },
     // 基础平台
     basisPlatformF: function() {
+      this.showjc = true;
       this.$router.push({ path: "/basisPlatform" });
     },
     // 责任平台
     responsibilityF: function() {
+      this.showjc = false;
       this.$router.push({ path: "/responsibility" });
     },
     // 触发页面改变大小

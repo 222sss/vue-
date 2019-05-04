@@ -13,14 +13,18 @@
 </template>
 
 <script>
-import navsList from "utils/data";
-
 export default {
   name: "Navs",
   props: {
     diyClass: {
       type: String,
       default: ""
+    },
+    navs: {
+      type: Array,
+      default: function() {
+        return [];
+      }
     }
   },
   data: function() {
@@ -29,17 +33,20 @@ export default {
     };
   },
   computed: {
-    navs: function() {
-      let navs = [];
-      navs = navsList.basisPlatformNavs;
-      return navs;
-    }
+    // navs: function() {
+    //   let navs = [];
+    //   navs = navsList.basisPlatformNavs;
+    //   return navs;
+    // }
   },
   methods: {
     change: function(router) {
       this.$router.push({ path: `/${router}` });
       this.active = router;
     }
+  },
+  mounted: function() {
+    this.active = this.$route.name;
   }
 };
 </script>
