@@ -1,13 +1,18 @@
 /**产品厂家 */
 <template>
   <div class="product-manufacturer w100 h100">
-    Product manufacturer
+    <echarts-table v-bind:title="'产品厂家'"></echarts-table>
   </div>
 </template>
 
 <script>
+import EchartsTable from "components/layout/EchartsTable";
+
 export default {
-  name: "ProductManufacturer"
+  name: "ProductManufacturer",
+  components: {
+    EchartsTable
+  }
 };
 </script>
 

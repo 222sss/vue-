@@ -1,13 +1,18 @@
 /**社会单位 */
 <template>
   <div class="social-unit w100 h100">
-    Social unit
+    <echarts-table v-bind:title="'社会单位'"></echarts-table>
   </div>
 </template>
 
 <script>
+import EchartsTable from "components/layout/EchartsTable";
+
 export default {
-  name: "SocialUnit"
+  name: "SocialUnit",
+  components: {
+    EchartsTable
+  }
 };
 </script>
 

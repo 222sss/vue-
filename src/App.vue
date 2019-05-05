@@ -52,6 +52,9 @@ export default {
 @include a-common;
 @include ul-common;
 
+// element
+@include el-checkbox;
+
 html,
 body {
   height: 100%;

@@ -45,7 +45,27 @@
         <el-button class="new">新增</el-button>
       </div>
       <div class="content-router w100">
-        <router-view ref="child"></router-view>
+        <div class="w100">
+          <router-view ref="child"></router-view>
+        </div>
+        <div class="bot-box w100">
+          <div class="bot-content h100">
+            <div class="imgDiv h100">
+              <img src="../assets/img/build.png" />
+            </div>
+            <div class="chooseDiv h100">
+              <el-checkbox-group v-model="checkList" size="mini">
+                <el-checkbox label="复选框 A" border></el-checkbox>
+                <el-checkbox label="复选框 B" border></el-checkbox>
+                <el-checkbox label="复选框 C" border></el-checkbox>
+              </el-checkbox-group>
+            </div>
+            <div class="bot-btn h100">
+              <span>撒点</span>
+              <span>列表</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -72,7 +92,9 @@ export default {
       // 版块
       plateSelect: "",
       // 搜索
-      search: ""
+      search: "",
+      // 底部选择
+      checkList: []
     };
   },
   methods: {
@@ -86,14 +108,10 @@ export default {
   },
   mounted: function() {
     this.plateSelect = this.$route.name;
-    // eslint-disable-next-line
-    console.log(this.$route.name);
   },
   watch: {
     plateSelect: function() {
       this.$router.push({ path: `/${this.plateSelect}` });
-      // eslint-disable-next-line
-      console.log(this.plateSelect);
     }
   }
 };
@@ -125,8 +143,62 @@ export default {
     }
 
     .content-router {
+      @include flex;
+      @include flex-column;
+      @include flex-primary-axis-between;
       flex: 1;
-      background: green;
+      box-sizing: border-box;
+      padding-right: 8%;
+
+      .bot-box {
+        @include flex;
+        @include flex-primary-axis-center;
+        color: $color-fff;
+        height: 30px;
+
+        .bot-content {
+          @include flex;
+          @include bg-color(#00165a);
+          border: 1px solid #264082;
+          border-radius: 5px;
+
+          .imgDiv {
+            @include flex;
+            @include flex-primary-axis-center;
+            @include flex-secondary-axis-center;
+            width: 30px;
+            background: url("../assets/img/buildBackgroud.png") no-repeat;
+            background-size: 100%;
+
+            img {
+              display: block;
+              width: 23px;
+              height: 20px;
+            }
+          }
+
+          .chooseDiv {
+            @include flex;
+            @include flex-secondary-axis-center;
+            padding: 0 16px;
+          }
+
+          .bot-btn {
+            @include flex;
+            @include flex-secondary-axis-center;
+            background: url("../assets/img/buildBackgroud.png") no-repeat;
+            background-size: 100%;
+            font-size: 12px;
+            color: #2bc4dd;
+            padding: 0 5px;
+
+            span {
+              margin: 0 5px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
   }
 }

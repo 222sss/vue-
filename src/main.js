@@ -5,19 +5,16 @@ import {
   FormItem,
   Button,
   Checkbox,
-  CheckboxButton,
   CheckboxGroup,
   Message,
   Select,
   Option,
-  OptionGroup,
   Input,
   Loading,
   Dialog,
   Table,
   TableColumn,
-  Pagination,
-  Scrollbar
+  Pagination
 } from "element-ui";
 import "assets/font/font.css";
 
@@ -31,11 +28,9 @@ Vue.use(Form);
 Vue.use(FormItem);
 Vue.use(Button);
 Vue.use(Checkbox);
-Vue.use(CheckboxButton);
 Vue.use(CheckboxGroup);
 Vue.use(Select);
 Vue.use(Option);
-Vue.use(OptionGroup);
 Vue.use(Input);
 
 Vue.use(Loading);
@@ -43,7 +38,6 @@ Vue.use(Dialog);
 Vue.use(Table);
 Vue.use(TableColumn);
 Vue.use(Pagination);
-Vue.use(Scrollbar);
 
 // 判断是否登录
 router.beforeEach((to, from, next) => {

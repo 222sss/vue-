@@ -1,13 +1,18 @@
 /**服务机构 */
 <template>
   <div class="facilitating-agency w100 h100">
-    facilitating agency
+    <echarts-table v-bind:title="'服务机构'"></echarts-table>
   </div>
 </template>
 
 <script>
+import EchartsTable from "components/layout/EchartsTable";
+
 export default {
-  name: "FacilitatingAgency"
+  name: "FacilitatingAgency",
+  components: {
+    EchartsTable
+  }
 };
 </script>
 
