@@ -44,6 +44,11 @@ export default {
   },
   mounted: function() {
     this.active = this.$route.name;
+  },
+  watch: {
+    $route(to) {
+      this.active = to.name;
+    }
   }
 };
 </script>

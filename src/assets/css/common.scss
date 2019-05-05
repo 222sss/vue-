@@ -39,6 +39,7 @@
 $color-fff: #ffffff;
 $font-color-6: #666666;
 $font-color-1: #47d3ed;
+$font-color-2: #369ec1;
 
 // 背景
 @mixin diy-bg($img, $posX, $posY, $color: transparent) {
@@ -90,3 +91,5 @@ $font-color-1: #47d3ed;
   -webkit-transform: rotate($deg * 1deg);
   -o-transform: rotate($deg * 1deg);
 }
+
+// 重写element样式

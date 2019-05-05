@@ -35,5 +35,31 @@
       "text": "消防水源",
       "router": "fireWaterSupply"
     }
+  ],
+  "areaSelect": [
+    {
+      "value": 1,
+      "label": "市辖区"
+    },
+    {
+      "value": 2,
+      "label": "港北区"
+    },
+    {
+      "value": 3,
+      "label": "港南区"
+    },
+    {
+      "value": 4,
+      "label": "覃塘区"
+    },
+    {
+      "value": 5,
+      "label": "平南县"
+    },
+    {
+      "value": 6,
+      "label": "桂平市"
+    }
   ]
 }

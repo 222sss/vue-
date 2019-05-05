@@ -9,8 +9,10 @@ import {
   CheckboxGroup,
   Message,
   Select,
-  Loading,
+  Option,
+  OptionGroup,
   Input,
+  Loading,
   Dialog,
   Table,
   TableColumn,
@@ -31,10 +33,12 @@ Vue.use(Button);
 Vue.use(Checkbox);
 Vue.use(CheckboxButton);
 Vue.use(CheckboxGroup);
-
 Vue.use(Select);
-Vue.use(Loading);
+Vue.use(Option);
+Vue.use(OptionGroup);
 Vue.use(Input);
+
+Vue.use(Loading);
 Vue.use(Dialog);
 Vue.use(Table);
 Vue.use(TableColumn);
