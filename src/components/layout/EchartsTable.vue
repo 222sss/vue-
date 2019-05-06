@@ -1,6 +1,6 @@
 /** 内容布局 上为echarts，下为table*/
 <template>
-  <div class="echarts-table w100 h100">
+  <div v-bind:class="['echarts-table', 'w100', 'h100', diyClass]">
     <div class="title w100">
       <img src="../../assets/img/build.png" />
       <span>{{ title }}</span>
@@ -25,6 +25,10 @@
 export default {
   name: "EchartsTable",
   props: {
+    diyClass: {
+      type: String,
+      default: ""
+    },
     title: {
       type: String,
       default: ""
@@ -77,10 +81,12 @@ export default {
 
       .table {
         flex: 1;
-        background: black;
       }
 
       .table_pagination {
+        @include flex;
+        @include flex-primary-axis-end;
+        @include flex-secondary-axis-center;
         height: 32px;
         overflow: hidden;
         background: red;

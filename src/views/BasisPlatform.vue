@@ -132,7 +132,7 @@ export default {
   .content {
     @include flex;
     @include flex-column;
-    flex: 1;
+    width: calc(100% - 147px);
     box-sizing: border-box;
     padding: 10px;
 

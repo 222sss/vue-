@@ -63,6 +63,36 @@ export function time() {
   return str;
 }
 
+/////////////// 计算高度 ////////////////////////
+/**
+ * 获取页面高度
+ *
+ * @export
+ * @returns
+ */
+export function getDocHeight() {
+  return parseInt(document.body.clientHeight);
+}
+/**
+ * 计算表格页面中最大高度
+ *
+ * @export
+ * @param {boolean} [isEcharts=false] 是否有Echarts
+ * @param {boolean} [isPage=false] 是否有分页
+ * @param {boolean} [parentHeight=false] 父高度
+ * @returns
+ */
+export function calcTableMaxHeight(
+  isEcharts = false,
+  isPage = false,
+  parentHeight = false
+) {
+  let height = parentHeight ? parentHeight : 560;
+  height *= isEcharts ? 0.55 : 1;
+  height -= isPage ? 32 : 0;
+  return height;
+}
+
 //////////////////// ECharts //////////////////////////////////
 /**
  * 初始化echarts

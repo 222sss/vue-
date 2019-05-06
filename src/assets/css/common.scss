@@ -104,3 +104,116 @@ $font-color-3: #32e6ef;
     border: none;
   }
 }
+
+//表格
+@mixin el-table {
+  .el-table,
+  .el-table__expanded-cell {
+    background: none;
+  }
+
+  .el-table--border,
+  .el-table--group {
+    border: solid 1px #102d79;
+  }
+
+  .el-table::before,
+  .el-table__fixed-right::before,
+  .el-table__fixed::before {
+    height: 0;
+  }
+
+  .el-table--border::after,
+  .el-table--group::after {
+    width: 0;
+  }
+  
+  .el-table__empty-text {
+    color: $color-fff;
+  }
+  
+  .el-table {
+    &.el-table--border {
+      .table_header_cell {
+        background-color: #001e72;
+        border-bottom: solid 1px #102d79;
+        border-right: solid 1px #102d79;
+        color: $color-fff;
+      }
+
+      .table_cell {
+        border-bottom: solid 1px #102d79;
+        border-right: solid 1px #102d79;
+      }
+
+      .table_cell_first {
+        border-left: solid 1px #102d79;
+      }
+
+      .table_cell_last {
+        border-right: solid 1px #102d79;
+      }
+    }
+
+    .table_header_cell {
+      background-color: #002fb0;
+      color: $color-fff;
+    }
+
+    .table_row {
+      background-color: #002fb0;
+      color: $color-fff;
+    }
+
+    .table_row_stripe {
+      background-color: #002fb0;
+      color: $color-fff;
+    }
+
+    // 强制更改当前行，高亮行背景色
+    .el-table--striped .el-table__body tr.el-table__row--striped.current-row td,
+    .el-table__body tr.current-row>td,
+    .el-table__body tr.hover-row.current-row>td,
+    .el-table__body tr.hover-row.el-table__row--striped.current-row>td {
+      background-color: #002996 !important;
+    }
+
+    .el-table__body tr.hover-row.el-table__row--striped>td,
+    .el-table__body tr.hover-row>td {
+      background-color: #002996 !important;
+    }
+
+    // 强制更改排序按钮颜色
+    .sort-caret.ascending {
+      border-bottom-color: #cecece !important;
+    }
+
+    .sort-caret.descending {
+      border-top-color: #cecece !important;
+    }
+
+    .ascending .sort-caret.ascending {
+      border-bottom-color: #3eb3e6 !important;
+    }
+
+    .descending .sort-caret.descending {
+      border-top-color: #3eb3e6 !important;
+    }
+
+    // 更改暂无数据最小高度
+    .el-table__empty-block {
+      min-height: 100px;
+    }
+  }
+
+  //滚动条的宽度
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 10px;
+  }
+  //滚动条的滑块
+  ::-webkit-scrollbar-thumb {
+    background-color: #102d79;
+    border-radius: 3px;
+  }
+}

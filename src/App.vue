@@ -54,6 +54,7 @@ export default {
 
 // element
 @include el-checkbox;
+@include el-table;
 
 html,
 body {
