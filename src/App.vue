@@ -54,7 +54,9 @@ export default {
 
 // element
 @include el-checkbox;
+@include el-option;
 @include el-table;
+@include el-pagination;
 
 html,
 body {

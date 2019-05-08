@@ -4,6 +4,9 @@ const webpack = require("webpack");
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+// 将json文件暴露出去，让axios能访问
+var basisPlatform = require("./src/utils/basisPlatform.json");
+var basisPlatformData = basisPlatform;
 
 module.exports = {
   publicPath: "./",
@@ -28,6 +31,14 @@ module.exports = {
     // 自动启动浏览器
     open: true,
     // 端口号
-    port: 8888
+    port: 8888,
+    before(app) {
+      app.get("/api/seller", (req, res, next) => {
+        res.json({
+          // 这里是你的json内容
+          data: basisPlatformData
+        })
+      })
+    }
   }
 };

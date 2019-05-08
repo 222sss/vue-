@@ -87,10 +87,34 @@ export function calcTableMaxHeight(
   isPage = false,
   parentHeight = false
 ) {
-  let height = parentHeight ? parentHeight : 560;
+  let height = parentHeight ? parentHeight : 600;
   height *= isEcharts ? 0.55 : 1;
-  height -= isPage ? 32 : 0;
+  height -= isPage ? 40 : 0;
   return height;
+}
+
+/////////////// 数据容错处理 ////////////////////////
+/**
+ * 判断数组数据是否为空
+ *
+ * @export
+ * @param {*} data 数据
+ * @param {*} [def=[]] 默认值
+ * @returns
+ */
+export function dataIsNullArray(data, def = []) {
+  return data !== undefined && data !== null ? data : def;
+}
+/**
+ * 判断数字数据是否为空
+ *
+ * @export
+ * @param {*} data 数据
+ * @param {number} [def=0] 默认值
+ * @returns
+ */
+export function dataIsNullNumber(data, def = 0) {
+  return data !== undefined && data !== null && data !== "" ? data : def;
 }
 
 //////////////////// ECharts //////////////////////////////////

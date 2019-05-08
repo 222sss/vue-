@@ -213,30 +213,6 @@ export default {
     margin-right: 10px;
   }
 
-  .el-select-dropdown {
-    border: 1px solid #1c70af;
-    color: $color-fff;
-    text-align: left;
-    padding-bottom: 5px;
-    background: rgba(0, 11, 55, 0.8);
-
-    .el-select-dropdown__item {
-      border-bottom: 1px solid #002c3e;
-      color: $font-color-2;
-      font-weight: 100;
-    }
-
-    .el-select-dropdown__item.hover,
-    .el-select-dropdown__item:hover {
-      background: rgb(1, 95, 132);
-    }
-
-    .popper__arrow,
-    .popper__arrow::after {
-      border-bottom-color: #002c3e !important;
-    }
-  }
-
   .areaSearch {
     width: 140px;
     height: 26px;

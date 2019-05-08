@@ -1,0 +1,85 @@
+{
+  "code": 200,
+  "buildingHomeTable": [
+    {
+      "id": 1,
+      "buildingName": "贵港市中央广场",
+      "buildingDress": "广西壮族自治区贵港市港北区建设东路22号",
+      "unit": "贵港市中央广场",
+      "pop": "季绍亭",
+      "phone": "13737579588"
+    },
+    {
+      "id": 2,
+      "buildingName": "贵港市唐人街",
+      "buildingDress": "贵港市中山路与建设路交汇处东北角",
+      "unit": "贵港市唐人街",
+      "pop": "党达龙",
+      "phone": "15108096867"
+    },
+    {
+      "id": 3,
+      "buildingName": "中强普罗旺斯小区",
+      "buildingDress": "贵港市荷城路1108号",
+      "unit": "中强普罗旺斯小区",
+      "pop": "林泽毓",
+      "phone": "18907859237"
+    },
+    {
+      "id": 4,
+      "buildingName": "港福时代广场",
+      "buildingDress": "贵港市建设中段北侧（原港都大酒店）",
+      "unit": "港福时代广场",
+      "pop": "李锦利",
+      "phone": "13457641983"
+    },
+    {
+      "id": 5,
+      "buildingName": "贵港市档案局",
+      "buildingDress": "贵港市城北新区桂林路与仙衣路交汇处西南角",
+      "unit": "贵港市档案局",
+      "pop": "梁",
+      "phone": "18923612189"
+    },
+    {
+      "id": 6,
+      "buildingName": "广西通泰汽车运输集团有限公司贵港汽车总站",
+      "buildingDress": "贵港市和平路326大院",
+      "unit": "广西通泰汽车运输集团有限公司贵港汽车总站",
+      "pop": "陈",
+      "phone": "13837265838"
+    },
+    {
+      "id": 7,
+      "buildingName": "贵港市俊美国际大酒店",
+      "buildingDress": "贵港市中山北路17号",
+      "unit": "贵港市港北区荷城之声娱乐城",
+      "pop": "韦宛其",
+      "phone": "18978595088"
+    },
+    {
+      "id": 8,
+      "buildingName": "贵港市中央广场",
+      "buildingDress": "广西壮族自治区贵港市港北区建设东路22号",
+      "unit": "贵港市中央广场",
+      "pop": "季绍亭",
+      "phone": "13737579588"
+    },
+    {
+      "id": 9,
+      "buildingName": "贵港市人民医院",
+      "buildingDress": "市港北区中山中路1号院",
+      "unit": "贵港市人民医院",
+      "pop": "谭海涛",
+      "phone": "0775-4200222"
+    },
+    {
+      "id": 10,
+      "buildingName": "贵港市烟草局",
+      "buildingDress": "贵港荷城路",
+      "unit": "贵港市烟草局",
+      "pop": "郑刚",
+      "phone": "15778665588"
+    }
+  ]
+}

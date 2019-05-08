@@ -10,11 +10,11 @@ import {
   Select,
   Option,
   Input,
+  Pagination,
   Loading,
   Dialog,
   Table,
-  TableColumn,
-  Pagination
+  TableColumn
 } from "element-ui";
 import "assets/font/font.css";
 
@@ -32,12 +32,12 @@ Vue.use(CheckboxGroup);
 Vue.use(Select);
 Vue.use(Option);
 Vue.use(Input);
+Vue.use(Pagination);
 
 Vue.use(Loading);
 Vue.use(Dialog);
 Vue.use(Table);
 Vue.use(TableColumn);
-Vue.use(Pagination);
 
 // 判断是否登录
 router.beforeEach((to, from, next) => {

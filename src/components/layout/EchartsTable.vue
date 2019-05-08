@@ -68,7 +68,7 @@ export default {
 
   .content {
     @include bg-color-transparent(#00175b, 0.8);
-    height: 560px;
+    height: 600px;
 
     .echarts-box {
       height: 45%;
@@ -87,9 +87,10 @@ export default {
         @include flex;
         @include flex-primary-axis-end;
         @include flex-secondary-axis-center;
-        height: 32px;
+        height: 40px;
         overflow: hidden;
-        background: red;
+        box-sizing: border-box;
+        padding: 0 20px;
       }
     }
   }
