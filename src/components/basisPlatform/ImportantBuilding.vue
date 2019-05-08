@@ -22,11 +22,7 @@
           v-bind:page-size="tablePageSize"
           v-bind:page-sizes="[2, 4, 8, 10]"
           v-bind:current-page.sync="tablePageNo"
-          v-bind:layout="
-            tableDataTotal > tablePageSize
-              ? 'prev, pager, next, total, jumper, sizes'
-              : ''
-          "
+          layout="prev, pager, next, total, jumper, sizes"
           @size-change="handleSizeChange"
           @current-change="handleCurrentChange"
         >
