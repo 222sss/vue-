@@ -79,7 +79,7 @@ export default {
       height: 55%;
 
       .table {
-        flex: 1;
+        height: calc(100% - 40px);
       }
 
       .table_pagination {

@@ -199,6 +199,10 @@ export default {
     // 清空表格
     clearTable: function() {
       this.tableData.splice(0, this.tableData.length);
+    },
+    // 触发页面改变大小
+    callResize: function() {
+      this.getTableMaxHeight();
     }
   },
   mounted: function() {

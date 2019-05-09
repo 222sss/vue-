@@ -82,12 +82,9 @@ export function getDocHeight() {
  * @param {boolean} [parentHeight=false] 父高度
  * @returns
  */
-export function calcTableMaxHeight(
-  isEcharts = false,
-  isPage = false,
-  parentHeight = false
-) {
-  let height = parentHeight ? parentHeight : 600;
+export function calcTableMaxHeight(isEcharts = false, isPage = false) {
+  let height = getDocHeight();
+  height = height - 285;
   height *= isEcharts ? 0.55 : 1;
   height -= isPage ? 40 : 0;
   return height;
