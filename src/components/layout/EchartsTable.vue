@@ -46,7 +46,6 @@ export default {
 .echarts-table {
   overflow: hidden;
   box-sizing: border-box;
-  padding-bottom: 20px;
 
   .title {
     @include flex;
@@ -68,7 +67,7 @@ export default {
 
   .content {
     @include bg-color-transparent(#00175b, 0.8);
-    height: 600px;
+    height: calc(100% - 30px);
 
     .echarts-box {
       height: 45%;

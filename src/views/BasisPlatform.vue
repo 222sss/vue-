@@ -45,7 +45,7 @@
         <el-button class="new">新增</el-button>
       </div>
       <div class="content-router w100">
-        <div class="w100">
+        <div class="w100 contentBox">
           <router-view ref="child"></router-view>
         </div>
         <div class="bot-box w100">
@@ -149,6 +149,10 @@ export default {
       flex: 1;
       box-sizing: border-box;
       padding-right: 8%;
+
+      .contentBox {
+        height: calc(100% - 80px);
+      }
 
       .bot-box {
         @include flex;
