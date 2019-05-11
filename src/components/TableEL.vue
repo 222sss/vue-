@@ -50,6 +50,7 @@
       v-bind:show-overflow-tooltip="column.showOverflowTooltip"
     >
     </el-table-column>
+    <slot></slot>
   </el-table>
 </template>
 

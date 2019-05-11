@@ -1,7 +1,11 @@
 /**重要建筑 */
 <template>
   <div class="important-building w100 h100">
-    <echarts-table v-bind:title="'重要建筑'">
+    <div class="title w100">
+      <img src="../../assets/img/build.png" />
+      <span>重要建筑</span>
+    </div>
+    <echarts-table v-if="detalis">
       <template slot="echarts">
         123
       </template>
@@ -13,7 +17,37 @@
           v-bind:columns="tableColumns"
           v-bind:tableSize="'small'"
           v-bind:table-data="tableData"
-        ></table-e-l>
+        >
+          <el-table-column
+            v-bind:align="'center'"
+            v-bind:fixed="'right'"
+            v-bind:header-align="'center'"
+            v-bind:label="'详情'"
+            v-bind:resizable="false"
+            v-bind:width="'140'"
+          >
+            <template slot-scope="scope">
+              <button-link
+                v-bind:data="scope"
+                v-bind:diy-class="'buttonlink_red'"
+                v-bind:text="'详情'"
+                @click="openDetails"
+              ></button-link>
+              <button-link
+                v-bind:data="scope"
+                v-bind:diy-class="'buttonlink_red'"
+                v-bind:text="'修改'"
+                @click="changeData"
+              ></button-link>
+              <button-link
+                v-bind:data="scope"
+                v-bind:diy-class="'buttonlink_red'"
+                v-bind:text="'删除'"
+                @click="deleteF"
+              ></button-link>
+            </template>
+          </el-table-column>
+        </table-e-l>
       </template>
       <template slot="table_pagination_content">
         <el-pagination
@@ -29,6 +63,25 @@
         </el-pagination>
       </template>
     </echarts-table>
+    <echarts-table v-else>
+      <template slot="echarts">
+        456
+        <el-button @click="back">返回</el-button>
+      </template>
+    </echarts-table>
+    <el-dialog
+      element-loading-text="拼命加载中"
+      element-loading-spinner="el-icon-loading"
+      element-loading-background="rgba(0, 0, 0, 0.5)"
+      v-bind:visible.sync="changeDialog"
+      width="600px"
+      v-bind:custom-class="'dialog dialog-paddingzero'"
+      top="20%"
+      v-bind:title="'修改'"
+      v-bind:close-on-click-modal="false"
+    >
+      <change-dialog></change-dialog>
+    </el-dialog>
   </div>
 </template>
 
@@ -41,12 +94,17 @@ import {
   dataIsNullNumber
 } from "@/utils/tool";
 import { buildingHomeTable } from "@/utils/api";
+import ButtonLink from "@/components/ButtonLink.vue";
+import { MessageBox } from "element-ui";
+import ChangeDialog from "components/layout/ChangeDialog";
 
 export default {
   name: "ImportantBuilding",
   components: {
     EchartsTable,
-    TableEL
+    TableEL,
+    ButtonLink,
+    ChangeDialog
   },
   data: function() {
     return {
@@ -113,15 +171,6 @@ export default {
           resizable: true,
           showOverflowTooltip: true,
           sortable: true
-        },
-        {
-          align: "center",
-          fixed: "right",
-          alignHeader: "center",
-          label: "详情",
-          prop: "pop",
-          resizable: true,
-          showOverflowTooltip: true
         }
       ],
       // 表格数据
@@ -134,7 +183,10 @@ export default {
       tablePageSize: 2,
       // 数据暂存
       tableMockData: [],
-      tableParams: {}
+      // 详情
+      detalis: true,
+      // 修改
+      changeDialog: false
     };
   },
   methods: {
@@ -165,7 +217,8 @@ export default {
               buildingDress: record.buildingDress,
               unit: record.unit,
               pop: record.pop,
-              phone: record.phone
+              phone: record.phone,
+              id: record.id
             });
           });
           this.searchTable();
@@ -200,6 +253,40 @@ export default {
     clearTable: function() {
       this.tableData.splice(0, this.tableData.length);
     },
+    // 打开详情
+    openDetails: function(data) {
+      this.detalis = false;
+      // eslint-disable-next-line
+      console.log(data);
+    },
+    // 打开修改
+    changeData: function(data) {
+      this.changeDialog = true;
+      // eslint-disable-next-line
+      console.log(data);
+    },
+    // 删除
+    deleteF: function(data) {
+      // eslint-disable-next-line
+      console.log(data);
+      MessageBox.confirm("是否删除？", "删除", {
+        closeOnClickModal: false,
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        customClass: "messagebox",
+        type: "warning"
+      })
+        .then(() => {
+          this.$root.showMessage("success", "删除成功!");
+        })
+        .catch(() => {
+          return;
+        });
+    },
+    // 返回主页
+    back: function() {
+      this.detalis = true;
+    },
     // 触发页面改变大小
     callResize: function() {
       this.getTableMaxHeight();
@@ -217,5 +304,23 @@ export default {
 
 .important-building {
   overflow: hidden;
+
+  .title {
+    @include flex;
+    @include flex-secondary-axis-center;
+    @include bg-color(#002996);
+    color: $font-color-3;
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 14px;
+
+    img {
+      display: block;
+      width: 23px;
+      height: 20px;
+      margin-right: 16px;
+    }
+  }
 }
 </style>

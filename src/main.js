@@ -11,8 +11,9 @@ import {
   Option,
   Input,
   Pagination,
-  Loading,
   Dialog,
+  Scrollbar,
+  Loading,
   Table,
   TableColumn
 } from "element-ui";
@@ -33,9 +34,10 @@ Vue.use(Select);
 Vue.use(Option);
 Vue.use(Input);
 Vue.use(Pagination);
+Vue.use(Dialog);
+Vue.use(Scrollbar);
 
 Vue.use(Loading);
-Vue.use(Dialog);
 Vue.use(Table);
 Vue.use(TableColumn);
 

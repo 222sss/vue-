@@ -57,6 +57,9 @@ export default {
 @include el-option;
 @include el-table;
 @include el-pagination;
+@include el-messagebox;
+@include el-dialog;
+@include el-scrollbar;
 
 html,
 body {
