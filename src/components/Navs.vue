@@ -46,7 +46,7 @@ export default {
     this.active = this.$route.name;
   },
   watch: {
-    $route(to) {
+    $route: function(to) {
       this.active = to.name;
     }
   }

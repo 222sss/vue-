@@ -111,6 +111,9 @@ export default {
   watch: {
     plateSelect: function() {
       this.$router.push({ path: `/${this.plateSelect}` });
+    },
+    $route: function(to) {
+      this.plateSelect = to.name;
     }
   }
 };
