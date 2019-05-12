@@ -80,7 +80,12 @@
       v-bind:title="'修改'"
       v-bind:close-on-click-modal="false"
     >
-      <change-dialog></change-dialog>
+      <change-dialog
+        ref="changeDialog"
+        v-bind:tabs="tabs"
+        v-bind:tabKey="tabKey"
+        v-bind:changes="changes"
+      ></change-dialog>
     </el-dialog>
   </div>
 </template>
@@ -186,7 +191,34 @@ export default {
       // 详情
       detalis: true,
       // 修改
-      changeDialog: false
+      changeDialog: false,
+      // 修改tab
+      tabs: [
+        {
+          key: "buildInfo",
+          text: "建筑信息"
+        },
+        {
+          key: "buildInfo1",
+          text: "建筑信息"
+        }
+      ],
+      // 选中标签
+      tabKey: "buildInfo",
+      // 修改内容
+      changes: [
+        {
+          id: 1,
+          label: "管理单位",
+          type: "select",
+          selectData: [
+            {
+              id: 1,
+              label: "单位1"
+            }
+          ]
+        }
+      ]
     };
   },
   methods: {
@@ -262,6 +294,10 @@ export default {
     // 打开修改
     changeData: function(data) {
       this.changeDialog = true;
+      const changeDialog = this.$refs["changeDialog"];
+      if (changeDialog && typeof changeDialog.recover === "function") {
+        changeDialog.recover();
+      }
       // eslint-disable-next-line
       console.log(data);
     },

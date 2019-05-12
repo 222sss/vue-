@@ -10,13 +10,13 @@
           v-model="areaSelect"
           filterable
           class="areaSelect"
-          v-bind:popper-append-to-body="popper"
+          v-bind:popper-append-to-body="false"
         >
           <el-option
             v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
+            v-bind:key="item.value"
+            v-bind:label="item.label"
+            v-bind:value="item.value"
             class="areaOption"
           >
           </el-option>
@@ -24,13 +24,13 @@
         <el-select
           v-model="plateSelect"
           class="areaSelect"
-          v-bind:popper-append-to-body="popper"
+          v-bind:popper-append-to-body="false"
         >
           <el-option
             v-for="item in navsList"
-            :key="item.id"
-            :label="item.text"
-            :value="item.router"
+            v-bind:key="item.id"
+            v-bind:label="item.text"
+            v-bind:value="item.router"
             class="areaOption"
           >
           </el-option>
@@ -82,7 +82,6 @@ export default {
   },
   data: function() {
     return {
-      popper: false,
       // 导航
       navsList: dataList.basisPlatformNavs,
       // 区域选择

@@ -63,6 +63,9 @@ export default {
   @include flex-secondary-axis-center;
 
   .nav {
+    @include flex;
+    @include flex-primary-axis-center;
+    @include flex-secondary-axis-center;
     @include bg-color(#002890);
     color: $font-color-1;
     border: 1px solid #013d85;
@@ -70,7 +73,6 @@ export default {
     font-size: 15px;
     height: 35px;
     margin-bottom: 12px;
-    line-height: 35px;
     text-align: center;
   }
 

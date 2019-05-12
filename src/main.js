@@ -13,6 +13,7 @@ import {
   Pagination,
   Dialog,
   Scrollbar,
+  Upload,
   Loading,
   Table,
   TableColumn
@@ -36,6 +37,7 @@ Vue.use(Input);
 Vue.use(Pagination);
 Vue.use(Dialog);
 Vue.use(Scrollbar);
+Vue.use(Upload);
 
 Vue.use(Loading);
 Vue.use(Table);

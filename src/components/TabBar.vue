@@ -1,13 +1,21 @@
 /**标签栏 */
 <template>
-  <div v-bind:class="['tab-bar', 'w100', 'h100', diyClass]">
+  <div v-bind:class="['tab-bar', 'w100', 'h100', `tabbar-${key}`, diyClass]">
     <el-scrollbar class="scrollbar">
       <ul class="tabs w100 h100" res="tabs">
-        <li v-bind:class="['tab']">
-          <a>123</a>
-        </li>
-        <li v-bind:class="['tab', 'tab-active']">
-          <a>123</a>
+        <li
+          v-for="tab of tabs"
+          v-bind:key="tab.key"
+          v-bind:class="['tab', tab.key === key ? 'tab-active' : '']"
+          v-bind:ref="`tabbar-${tab.key}`"
+        >
+          <a
+            v-bind:title="tab.text"
+            v-cloak
+            @click.stop="changeHandle(tab.key)"
+          >
+            {{ tab.text }}
+          </a>
         </li>
       </ul>
     </el-scrollbar>
@@ -22,6 +30,43 @@ export default {
     diyClass: {
       type: String,
       default: ""
+    },
+    // 标签
+    tabs: {
+      type: Array,
+      default: function() {
+        return [];
+      }
+    },
+    // 选中
+    activeKey: {
+      type: String,
+      default: ""
+    }
+  },
+  data: function() {
+    return {
+      key: String
+    };
+  },
+  methods: {
+    // 切换选中
+    changeHandle: function(key) {
+      this.key = key;
+      this.$emit("change", key);
+    },
+    // 外部使用
+    setActiveKey: function(key) {
+      this.key = key;
+    }
+  },
+  mounted() {
+    if (this.activeKey) {
+      this.key = this.activeKey;
+      return;
+    }
+    if (this.tabs && this.tabs[0]) {
+      this.key = this.tabs[0].key;
     }
   }
 };
