@@ -16,14 +16,11 @@
               {{ change.label }}
             </div>
             <div v-if="change.type == 'input'" class="change">
-              <el-input
-                v-model="change.inputData"
-                class="chang-input"
-              ></el-input>
+              <el-input v-model="change.value" class="chang-input"></el-input>
             </div>
             <div v-if="change.type == 'select'" class="change">
               <el-select
-                v-model="change.selectData"
+                v-model="change.value"
                 filterable
                 v-bind:popper-append-to-body="false"
               >
@@ -41,7 +38,7 @@
                 class="upload"
                 ref="upload"
                 action=""
-                v-bind:file-list="fileList"
+                v-bind:file-list="change.value"
                 v-bind:auto-upload="false"
                 :on-change="handleChange"
               >
@@ -103,11 +100,7 @@ export default {
   data: function() {
     return {
       // 选中标签，操作用
-      tabKeys: "",
-      search: "",
-      options: [],
-      select: 1,
-      fileList: []
+      tabKeys: ""
     };
   },
   methods: {
@@ -118,8 +111,12 @@ export default {
     },
     // 选择文件
     handleChange: function(file) {
-      this.fileList = [];
-      this.fileList.push(file);
+      this.changes.map(res => {
+        if (res.type == "upload") {
+          res.value = [];
+          res.value.push(file);
+        }
+      });
     },
     // 第一次进入改变选中后，第二次进入回到第一个
     recover: function() {
@@ -133,11 +130,22 @@ export default {
     save: function() {
       // eslint-disable-next-line
       console.log("保存");
+      this.changes.map(res => {
+        // eslint-disable-next-line
+        console.log(res.value)
+      });
     },
     // 清空
     empty: function() {
       // eslint-disable-next-line
       console.log("清空");
+      this.changes.map(res => {
+        if (res.type == "upload") {
+          res.value = [];
+        } else {
+          res.value = "";
+        }
+      });
     }
   }
 };
@@ -159,10 +167,13 @@ export default {
   }
 
   .dialog-right {
+    @include flex;
+    @include flex-column;
+    @include flex-primary-axis-between;
     width: calc(100% - 180px);
 
     .right-conten {
-      height: calc(100% - 30px);
+      height: calc(100% - 40px);
 
       .chang-box {
         @include flex;
@@ -183,7 +194,7 @@ export default {
       @include flex;
       @include flex-primary-axis-center;
       @include flex-secondary-axis-center;
-      height: 30px;
+      height: 4 0px;
     }
   }
 }
@@ -193,10 +204,8 @@ export default {
 @import "assets/css/common.scss";
 
 .change-dialog {
-  .chang-input {
-    .el-input__inner {
-      color: $color-fff;
-    }
+  .el-input__inner {
+    color: $color-fff;
   }
 
   .upload {

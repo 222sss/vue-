@@ -102,6 +102,7 @@ import { buildingHomeTable } from "@/utils/api";
 import ButtonLink from "@/components/ButtonLink.vue";
 import { MessageBox } from "element-ui";
 import ChangeDialog from "components/layout/ChangeDialog";
+import data from "../../utils/basisPlatform";
 
 export default {
   name: "ImportantBuilding",
@@ -197,28 +198,12 @@ export default {
         {
           key: "buildInfo",
           text: "建筑信息"
-        },
-        {
-          key: "buildInfo1",
-          text: "建筑信息"
         }
       ],
       // 选中标签
       tabKey: "buildInfo",
       // 修改内容
-      changes: [
-        {
-          id: 1,
-          label: "管理单位",
-          type: "select",
-          selectData: [
-            {
-              id: 1,
-              label: "单位1"
-            }
-          ]
-        }
-      ]
+      changes: data.changeList
     };
   },
   methods: {

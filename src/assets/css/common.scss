@@ -120,7 +120,7 @@ $bg-color-content: #002fb0;
     color: $color-fff;
     text-align: left;
     padding-bottom: 5px;
-    background: rgba(0, 11, 55, 0.8);
+    background: rgb(0, 11, 55);
 
     .el-select-dropdown__item {
       border-bottom: 1px solid #002c3e;
@@ -489,6 +489,7 @@ $bg-color-content: #002fb0;
   }
   .scrollbar .el-scrollbar__wrap {
     margin-right: -18px !important;
+    margin-bottom: 0 !important; 
     height: 100%;
     overflow-x: hidden;
 

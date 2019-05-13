@@ -84,7 +84,140 @@
   ],
   "changeList": [
     {
-      
+      "id": 1,
+      "label": "管理单位",
+      "type": "select",
+      "value": "2",
+      "options": [
+        {
+          "id": "1",
+          "label": "单位1"
+        },
+        {
+          "id": "2",
+          "label": "单位2"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "建筑名称",
+      "type": "input",
+      "value": "贵港市中央广场"
+    },
+    {
+      "id": 3,
+      "label": "占地面积",
+      "type": "input",
+      "value": "2653.89"
+    },
+    {
+      "id": 4,
+      "label": "地区",
+      "type": "select",
+      "value": "3",
+      "options": [
+        {
+          "id": "1",
+          "label": "市辖区"
+        },
+        {
+          "id": "2",
+          "label": "港北区"
+        },
+        {
+          "id": "3",
+          "label": "港南区"
+        },
+        {
+          "id": "4",
+          "label": "覃塘区"
+        },
+        {
+          "id": "5",
+          "label": "平南县"
+        },
+        {
+          "id": "6",
+          "label": "桂平市"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "label": "建筑类型",
+      "type": "select",
+      "value": "2",
+      "options": [
+        {
+          "id": "1",
+          "label": "超高层建筑"
+        },
+        {
+          "id": "2",
+          "label": "高层建筑"
+        },
+        {
+          "id": "3",
+          "label": "单多层建筑"
+        },
+        {
+          "id": "4",
+          "label": "地下建筑  "
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "label": "建筑图片",
+      "type": "upload",
+      "value": [
+        {
+          "name": "[Y}J0}]PV3X$VX3`Y~UV]4Y.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "建筑面积",
+      "type": "input",
+      "value": "86585"
+    },
+    {
+      "id": 8,
+      "label": "高度",
+      "type": "input",
+      "value": "97"
+    },
+    {
+      "id": 9,
+      "label": "地下层数",
+      "type": "input",
+      "value": "2"
+    },
+    {
+      "id": 10,
+      "label": "建筑地址",
+      "type": "input",
+      "value": "广西壮族自治区贵港市港北区建设东路22号"
+    },
+    {
+      "id": 11,
+      "label": "地上层数",
+      "type": "input",
+      "value": "30"
+    },
+    {
+      "id": 12,
+      "label": "建筑年限",
+      "type": "input",
+      "value": "1997"
+    },
+    {
+      "id": 13,
+      "label": "经纬度",
+      "type": "input",
+      "value": "109.617981,23.095475"
     }
   ]
 }
