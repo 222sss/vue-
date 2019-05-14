@@ -36,6 +36,43 @@
       "router": "fireWaterSupply"
     }
   ],
+  "Responsibility": [
+    {
+      "id": 1,
+      "text": "单位履责",
+      "router": "Unitliability"
+    },
+    {
+      "id": 2,
+      "text": "部门协管",
+      "router": "Departmentalcomanagement"
+    },
+    {
+      "id": 3,
+      "text": "监督执法",
+      "router": "Supervision"
+    },
+    {
+      "id": 4,
+      "text": "安全评估",
+      "router": "Safetyassessment"
+    },
+    {
+      "id": 5,
+      "text": "责任网络",
+      "router": "Responsibilitynetwork"
+    },
+    {
+      "id": 6,
+      "text": "政府督办",
+      "router": "Supervise"
+    },
+    {
+      "id": 7,
+      "text": "公安派出所监督系统",
+      "router": "PublicSecurity"
+    }
+  ],
   "areaSelect": [
     {
       "value": 1,
