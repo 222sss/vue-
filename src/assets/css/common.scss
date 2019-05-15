@@ -112,6 +112,10 @@ $bg-color-content: #002fb0;
   .el-checkbox.is-bordered {
     border: none;
   }
+
+  .el-checkbox__label {
+    color: $color-fff;
+  }
 }
 // option
 @mixin el-option {

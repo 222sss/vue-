@@ -83,52 +83,50 @@ export default new Router({
           redirect: "Unitliability", // 重定向
           component: () =>
             import(/* webpackChunkName: "Responsibility" */ "./views/Responsibility.vue"),
-            children:[
+          children: [
             {
-              path:"/Unitliability",
-              name:"Unitliability",
+              path: "/Unitliability",
+              name: "Unitliability",
               component: () =>
                 import(/* webpackChunkName: "Responsibility" */ "./components/responsibility/Unitliability.vue")
             },
             {
-              path:"/Departmentalcomanagement",
-              name:"Departmentalcomanagement",
+              path: "/Departmentalcomanagement",
+              name: "Departmentalcomanagement",
               component: () =>
                 import(/* webpackChunkName: "Responsibility" */ "./components/responsibility/Departmentalcomanagement.vue")
             },
             {
-              path:"/Supervision",
-              name:"Supervision",
+              path: "/Supervision",
+              name: "Supervision",
               component: () =>
                 import(/* webpackChunkName: "Responsibility" */ "./components/responsibility/Supervision.vue")
             },
             {
-              path:"/Safetyassessment",
-              name:"Safetyassessment",
+              path: "/Safetyassessment",
+              name: "Safetyassessment",
               component: () =>
                 import(/* webpackChunkName: "Responsibility" */ "./components/responsibility/Safetyassessment.vue")
             },
             {
-              path:"/Responsibilitynetwork",
-              name:"Responsibilitynetwork",
+              path: "/Responsibilitynetwork",
+              name: "Responsibilitynetwork",
               component: () =>
                 import(/* webpackChunkName: "Responsibility" */ "./components/responsibility/Responsibilitynetwork.vue")
             },
             {
-              path:"/Supervise",
-              name:"Supervise",
+              path: "/Supervise",
+              name: "Supervise",
               component: () =>
                 import(/* webpackChunkName: "Responsibility" */ "./components/responsibility/Supervise.vue")
             },
             {
-              path:"/PublicSecurity",
-              name:"PublicSecurity",
+              path: "/PublicSecurity",
+              name: "PublicSecurity",
               component: () =>
                 import(/* webpackChunkName: "Responsibility" */ "./components/responsibility/PublicSecurity.vue")
             }
-           
-            
-            ]
+          ]
         }
       ]
     }

@@ -5,7 +5,7 @@
       v-for="nav of navs"
       v-bind:key="nav.id"
       v-bind:class="['nav', 'w100', { navActive: active == nav.router }]"
-      @click="change(nav.router)"
+      @click="change(nav.router, nav.id)"
     >
       {{ nav.text }}
     </div>
@@ -37,9 +37,10 @@ export default {
   },
   methods: {
     // 修改选中跳转路由
-    change: function(router) {
+    change: function(router, id) {
       this.$router.push({ path: `/${router}` });
       this.active = router;
+      this.$emit("changeNav", id);
     }
   },
   mounted: function() {

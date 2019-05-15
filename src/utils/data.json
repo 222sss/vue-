@@ -3,37 +3,151 @@
     {
       "id": 1,
       "text": "重要建筑",
-      "router": "importantBuilding"
+      "router": "importantBuilding",
+      "checkList": [
+        {
+          "id": "1",
+          "label": "超高层建筑"
+        },
+        {
+          "id": "2",
+          "label": "高层建筑"
+        },
+        {
+          "id": "3",
+          "label": "单多层建筑"
+        },
+        {
+          "id": "4",
+          "label": "地下建筑"
+        }
+      ]
     },
     {
       "id": 2,
       "text": "社会单位",
-      "router": "socialUnit"
+      "router": "socialUnit",
+      "checkList": [
+        {
+          "id": "1",
+          "label": "高危单位"
+        },
+        {
+          "id": "2",
+          "label": "重点单位"
+        },
+        {
+          "id": "3",
+          "label": "一般单位"
+        }
+      ]
     },
     {
       "id": 3,
       "text": "产品厂家",
-      "router": "productManufacturer"
+      "router": "productManufacturer",
+      "checkList": [
+        {
+          "id": "1",
+          "label": "自动灭火类"
+        },
+        {
+          "id": "2",
+          "label": "火灾报警类"
+        },
+        {
+          "id": "3",
+          "label": "消防器材及装备"
+        },
+        {
+          "id": "4",
+          "label": "防火建材"
+        }
+      ]
     },
     {
       "id": 4,
       "text": "服务机构",
-      "router": "facilitatingAgency"
+      "router": "facilitatingAgency",
+      "checkList": [
+        {
+          "id": "1",
+          "label": "消防设施维护保养检测机构"
+        },
+        {
+          "id": "2",
+          "label": "消防安全评估机构"
+        }
+      ]
     },
     {
       "id": 5,
       "text": "消防力量",
-      "router": "fireForce"
+      "router": "fireForce",
+      "checkList": [
+        {
+          "id": "1",
+          "label": "公安消防站"
+        },
+        {
+          "id": "2",
+          "label": "政府专职站"
+        },
+        {
+          "id": "3",
+          "label": "企业专职站"
+        },
+        {
+          "id": "4",
+          "label": "微型消防站"
+        }
+      ]
     },
     {
       "id": 6,
       "text": "联动力量",
-      "router": "linkageForces"
+      "router": "linkageForces",
+      "checkList": [
+        {
+          "id": "1",
+          "label": "用水"
+        },
+        {
+          "id": "2",
+          "label": "用电"
+        },
+        {
+          "id": "3",
+          "label": "用气"
+        },
+        {
+          "id": "4",
+          "label": "医院"
+        }
+      ]
     },
     {
       "id": 7,
       "text": "消防水源",
-      "router": "fireWaterSupply"
+      "router": "fireWaterSupply",
+      "checkList": [
+        {
+          "id": "1",
+          "label": "市政消火栓"
+        },
+        {
+          "id": "2",
+          "label": "消防水鹤"
+        },
+        {
+          "id": "3",
+          "label": "取水码头"
+        },
+        {
+          "id": "4",
+          "label": "取水井"
+        }
+      ]
     }
   ],
   "Responsibility": [

@@ -2,7 +2,7 @@
 <template>
   <div class="basisPlatform w100 h100">
     <div class="navs h100">
-      <navs v-bind:navs="navsList"></navs>
+      <navs v-bind:navs="navsList" @changeNav="changeContent"></navs>
     </div>
     <div class="content h100">
       <div class="choose w100">
@@ -55,12 +55,15 @@
             </div>
             <div class="chooseDiv h100">
               <el-checkbox-group v-model="checkList" size="mini">
-                <el-checkbox label="复选框 A" border></el-checkbox>
-                <el-checkbox label="复选框 B" border></el-checkbox>
-                <el-checkbox label="复选框 C" border></el-checkbox>
+                <el-checkbox
+                  v-for="check of checkListData"
+                  v-bind:key="check.id"
+                  v-bind:label="check.label"
+                  border
+                ></el-checkbox>
               </el-checkbox-group>
             </div>
-            <div class="bot-btn h100">
+            <div class="bot-btn h100" v-if="showBtn">
               <span>撒点</span>
               <span>列表</span>
             </div>
@@ -92,11 +95,43 @@ export default {
       plateSelect: "",
       // 搜索
       search: "",
+      // 底部选择内容
+      checkListData: [],
       // 底部选择
-      checkList: []
+      checkList: [],
+      // 显示撒点列表按钮
+      showBtn: true
     };
   },
   methods: {
+    // 点击导航
+    changeContent: function(id) {
+      this.navsList.map(res => {
+        if (id == res.id) {
+          this.checkListData = res.checkList;
+          this.showBtn = true;
+          // eslint-disable-next-line
+          console.log(res);
+        }
+        if (id == 7) {
+          this.showBtn = false;
+        }
+      });
+      // eslint-disable-next-line
+      console.log(id);
+    },
+    // 刷新时判断显示
+    refershShow: function(router) {
+      this.navsList.map(res => {
+        if (router == res.router) {
+          this.checkListData = res.checkList;
+          this.showBtn = true;
+        }
+        if (router == "fireWaterSupply") {
+          this.showBtn = false;
+        }
+      });
+    },
     // 触发页面改变大小
     callResize: function() {
       const child = this.$refs["child"];
@@ -107,6 +142,7 @@ export default {
   },
   mounted: function() {
     this.plateSelect = this.$route.name;
+    this.refershShow(this.$route.name);
   },
   watch: {
     plateSelect: function() {

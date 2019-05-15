@@ -7,7 +7,7 @@
     </div>
     <echarts-table v-if="detalis">
       <template slot="echarts">
-        123
+        <div class="w100 h100" id="buildEcharts"></div>
       </template>
       <template slot="table_content">
         <table-e-l
@@ -76,7 +76,7 @@
       v-bind:visible.sync="changeDialog"
       width="600px"
       v-bind:custom-class="'dialog dialog-paddingzero'"
-      top="20%"
+      top="200px"
       v-bind:title="'修改'"
       v-bind:close-on-click-modal="false"
     >
@@ -96,7 +96,8 @@ import TableEL from "components/TableEL";
 import {
   calcTableMaxHeight,
   dataIsNullArray,
-  dataIsNullNumber
+  dataIsNullNumber,
+  initECharts
 } from "@/utils/tool";
 import { buildingHomeTable } from "@/utils/api";
 import ButtonLink from "@/components/ButtonLink.vue";
@@ -203,7 +204,9 @@ export default {
       // 选中标签
       tabKey: "buildInfo",
       // 修改内容
-      changes: data.changeList
+      changes: data.changeList,
+      // echarts
+      buildEcharts: null
     };
   },
   methods: {
@@ -225,8 +228,11 @@ export default {
     },
     // 获取数据
     getData: function() {
+      // echarts配置
+      let option = {};
       buildingHomeTable().then(res => {
         if (res.data.code == 200) {
+          // 表格
           const data = dataIsNullArray(res.data.buildingHomeTable);
           data.map(record => {
             this.tableMockData.push({
@@ -239,6 +245,68 @@ export default {
             });
           });
           this.searchTable();
+          // echarts
+          const echartsData = dataIsNullArray(res.data.buildimgEcharts);
+          option = {
+            tooltip: {
+              show: true
+            },
+            xAxis: {
+              type: "category",
+              triggerEvent: true,
+              data: [],
+              axisLine: {
+                lineStyle: {
+                  color: "#fff"
+                }
+              }
+            },
+            yAxis: {
+              type: "value",
+              axisLine: {
+                lineStyle: {
+                  color: "#fff"
+                }
+              },
+              splitLine: {
+                show: false
+              }
+            },
+            series: [
+              {
+                data: [],
+                type: "bar",
+                itemStyle: {
+                  normal: {
+                    color: function(params) {
+                      // build a color map as your need.
+                      const colorList = [
+                        "#d63e41",
+                        "#11aafd",
+                        "#25c65d",
+                        "#002996"
+                      ];
+                      return colorList[params.dataIndex];
+                    }
+                  }
+                }
+              }
+            ]
+          };
+          echartsData.map(res => {
+            option.xAxis.data.push({
+              value: res.name,
+              textStyle: {
+                fontSize: 14
+              }
+            });
+            option.series[0].data.push(res.num);
+          });
+          this.buildEcharts = initECharts(
+            document.getElementById("buildEcharts"),
+            option
+          );
+          this.echartsClick(this.buildEcharts);
         }
       });
     },
@@ -304,6 +372,13 @@ export default {
           return;
         });
     },
+    // echarts点击事件
+    echartsClick: function(echarts) {
+      echarts.on("click", params => {
+        // eslint-disable-next-line
+        console.log(params.name)
+      });
+    },
     // 返回主页
     back: function() {
       this.detalis = true;
@@ -311,6 +386,9 @@ export default {
     // 触发页面改变大小
     callResize: function() {
       this.getTableMaxHeight();
+      if (this.buildEcharts) {
+        this.buildEcharts.resize();
+      }
     }
   },
   mounted: function() {
