@@ -102,6 +102,24 @@ $bg-color-content: #002fb0;
   -o-transform: rotate($deg * 1deg);
 }
 
+// box-title
+.box-title {
+  @include flex;
+  @include flex-secondary-axis-center;
+  @include bg-color(#002996);
+  color: $font-color-3;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 14px;
+
+  img {
+    display: block;
+    width: 23px;
+    height: 20px;
+    margin-right: 16px;
+  }
+}
 // 重写element样式
 // checkbox
 @mixin el-checkbox {
@@ -327,38 +345,6 @@ $bg-color-content: #002fb0;
       color: $color-fff;
     }
   }
-  // .el-pagination.is-background .btn-prev,
-  // .el-pagination.is-background .btn-next,
-  // .el-pagination.is-background .el-pager li {
-  //   border-top: 1px solid #318db3;
-  //   border-bottom: 1px solid #318db3;
-  //   font-weight: 100;
-  //   color: #35adf0 !important;
-  //   margin: 0px !important;
-  //   background: none !important;
-  // }
-
-  // .el-pagination.is-background .btn-prev {
-  //   border-left: 1px solid #318db3;
-  //   border-radius: 2px 0px 0px 2px !important;
-
-  // }
-
-  // .el-pagination.is-background .btn-next {
-  //   border-left: 1px solid #318db3;
-  //   border-right: 1px solid #318db3;
-  //   border-radius: 0px 2px 2px 0px !important;
-  // }
-
-  // .el-pagination.is-background .el-pager li {
-  //   border-left: 1px solid #318db3;
-  //   border-radius: 0px !important;
-  // }
-
-  // .el-pagination.is-background .el-pager li.active {
-  //   background-color: #3eb3e6 !important;
-  //   color: #fff !important;
-  // }
 }
 // 弹窗
 @mixin el-messagebox {

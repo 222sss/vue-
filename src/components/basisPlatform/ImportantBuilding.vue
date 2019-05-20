@@ -1,7 +1,7 @@
 /**重要建筑 */
 <template>
   <div class="important-building w100 h100">
-    <div class="title w100">
+    <div class="box-title w100">
       <img src="../../assets/img/build.png" />
       <span>重要建筑</span>
     </div>
@@ -99,7 +99,7 @@ import {
   dataIsNullNumber,
   initECharts
 } from "@/utils/tool";
-import { buildingHomeTable } from "@/utils/api";
+import { importantBuilding } from "@/utils/api";
 import ButtonLink from "@/components/ButtonLink.vue";
 import { MessageBox } from "element-ui";
 import ChangeDialog from "components/layout/ChangeDialog";
@@ -230,7 +230,7 @@ export default {
     getData: function() {
       // echarts配置
       let option = {};
-      buildingHomeTable().then(res => {
+      importantBuilding().then(res => {
         if (res.data.code == 200) {
           // 表格
           const data = dataIsNullArray(res.data.buildingHomeTable);
@@ -403,23 +403,5 @@ export default {
 
 .important-building {
   overflow: hidden;
-
-  .title {
-    @include flex;
-    @include flex-secondary-axis-center;
-    @include bg-color(#002996);
-    color: $font-color-3;
-    height: 30px;
-    box-sizing: border-box;
-    padding: 0 10px;
-    font-size: 14px;
-
-    img {
-      display: block;
-      width: 23px;
-      height: 20px;
-      margin-right: 16px;
-    }
-  }
 }
 </style>
