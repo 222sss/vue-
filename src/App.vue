@@ -60,6 +60,7 @@ export default {
 @include el-messagebox;
 @include el-dialog;
 @include el-scrollbar;
+@include el-date;
 
 html,
 body {

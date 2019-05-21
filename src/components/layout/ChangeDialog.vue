@@ -52,6 +52,14 @@
                 </el-button>
               </el-upload>
             </div>
+            <div v-if="change.type == 'timer'" class="change">
+              <el-date-picker
+                v-model="change.value"
+                type="date"
+                placeholder="选择日期"
+              >
+              </el-date-picker>
+            </div>
           </div>
         </el-scrollbar>
       </div>
@@ -194,7 +202,7 @@ export default {
       @include flex;
       @include flex-primary-axis-center;
       @include flex-secondary-axis-center;
-      height: 4 0px;
+      height: 40px;
     }
   }
 }

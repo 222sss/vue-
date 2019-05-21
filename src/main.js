@@ -14,6 +14,7 @@ import {
   Dialog,
   Scrollbar,
   Upload,
+  DatePicker,
   Loading,
   Table,
   TableColumn
@@ -38,6 +39,7 @@ Vue.use(Pagination);
 Vue.use(Dialog);
 Vue.use(Scrollbar);
 Vue.use(Upload);
+Vue.use(DatePicker);
 
 Vue.use(Loading);
 Vue.use(Table);

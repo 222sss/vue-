@@ -5,7 +5,7 @@
       <img src="../../assets/img/build.png" />
       <span>重要建筑</span>
     </div>
-    <echarts-table v-if="detalis">
+    <echarts-table v-show="detalis">
       <template slot="echarts">
         <div class="w100 h100" id="buildEcharts"></div>
       </template>
@@ -63,7 +63,7 @@
         </el-pagination>
       </template>
     </echarts-table>
-    <echarts-table v-else>
+    <echarts-table v-show="!detalis">
       <template slot="echarts">
         456
         <el-button @click="back">返回</el-button>
@@ -392,8 +392,8 @@ export default {
     }
   },
   mounted: function() {
-    this.getData();
     this.getTableMaxHeight();
+    this.getData();
   }
 };
 </script>

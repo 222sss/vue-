@@ -120,6 +120,7 @@ $bg-color-content: #002fb0;
     margin-right: 16px;
   }
 }
+
 // 重写element样式
 // checkbox
 @mixin el-checkbox {
@@ -485,6 +486,53 @@ $bg-color-content: #002fb0;
 
     .el-scrollbar__view {
       height: 100%;
+    }
+  }
+}
+// 选择时间
+@mixin el-date {
+  // 修改input宽度
+  .el-date-editor.el-input,
+  .el-date-editor.el-input__inner {
+    width: 100%;
+  }
+
+  // 修改小三角颜色
+  .popper__arrow,
+  .popper__arrow::after {
+    border-bottom-color: #002c3e !important;
+    border-top-color: #002c3e !important;
+  }
+
+  // 选择日期窗口
+  .el-picker-panel {
+    color: $color-fff;
+    border: 1px solid #007294;
+    background-color:#002996;
+
+    // 头部
+    .el-date-picker__header {
+      // 头部按钮
+      .el-picker-panel__icon-btn {
+        color: $color-fff;
+        font-size: 16px;
+      }
+      // 头部文字
+      .el-date-picker__header-label {
+        color: $color-fff;
+      }
+    }
+    // 日期
+    .el-picker-panel__content {
+      // 星期
+      .el-date-table th {
+        color: $color-fff;
+      }
+      // 上月和下月的日期
+      .el-date-table td.next-month,
+      .el-date-table td.prev-month {
+        color: #ccc;
+      }
     }
   }
 }
