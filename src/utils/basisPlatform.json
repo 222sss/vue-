@@ -82,7 +82,7 @@
       "phone": "15778665588"
     }
   ],
-  "changeList": [
+  "buildingChangeList": [
     {
       "id": 1,
       "label": "管理单位",
@@ -240,6 +240,297 @@
       "id": "4",
       "name": "地下建筑",
       "num": 10
+    }
+  ],
+  "socialUnitTable": [
+    {
+      "id": 1,
+      "unitName": "维也纳酒店（荷城路）",
+      "unitDress": "贵港市港北区荷城路1371号",
+      "pop": "黄永锋",
+      "phone": "18577930580",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 2,
+      "unitName": "港福时代广场",
+      "unitDress": "贵港市建设中段北侧（原港都大酒店）",
+      "pop": "李锦利",
+      "phone": "13457641983",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 3,
+      "unitName": "贵港市唐人街",
+      "unitDress": "贵港市中山路与建设路交汇处东北角",
+      "pop": "党达龙",
+      "phone": "15108096867",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 4,
+      "unitName": "贵港市好歌城娱乐有限公司",
+      "unitDress": "贵港市港北区建设中路182号港福时代广场",
+      "pop": "陶区理",
+      "phone": "13621639910",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 5,
+      "unitName": "贵港市博物馆",
+      "unitDress": "贵港市港北区桂林路与仙衣路交汇处",
+      "pop": "廖斌",
+      "phone": "4213177",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 6,
+      "unitName": "贵港市图书馆",
+      "unitDress": "贵港市政府后面",
+      "pop": "冼振明",
+      "phone": "13924598180",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 7,
+      "unitName": "贵港市档案局",
+      "unitDress": "贵港市城北新区桂林路与仙衣路交汇处西南角",
+      "pop": "梁",
+      "phone": "18923612189",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 8,
+      "unitName": "广西通泰汽车运输集团有限公司贵港汽车总站",
+      "unitDress": "贵港市和平路326大院",
+      "pop": "陈",
+      "phone": "13837265838",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 9,
+      "unitName": "中国建设银行股份有限公司贵港分行",
+      "unitDress": "贵港市解放路98号",
+      "pop": "沈启松",
+      "phone": "0775-4216468",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 10,
+      "unitName": "贵港市俊美国际大酒店",
+      "unitDress": "贵港市中山北路17号",
+      "pop": "温玉梅",
+      "phone": "13737095666",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 11,
+      "unitName": "贵港市广播电视台",
+      "unitDress": "贵港市港北区民主路198号",
+      "pop": "李段四",
+      "phone": "4226626",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 12,
+      "unitName": "贵港市中央广场",
+      "unitDress": "广西壮族自治区贵港市港北区建设东路22号",
+      "pop": "季绍亭",
+      "phone": "13737579588",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 13,
+      "unitName": "贵港市福来登酒店",
+      "unitDress": "广西贵港市港北区金港大道935号",
+      "pop": "姜柳成",
+      "phone": "15977583232",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 14,
+      "unitName": "贵港市人民医院",
+      "unitDress": "市港北区中山中路1号院",
+      "pop": "谭海涛",
+      "phone": "0775-4200222",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 15,
+      "unitName": "贵港市烟草局",
+      "unitDress": "广西壮族自治区贵港市港北区",
+      "pop": "郑刚",
+      "phone": "15778665588",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 16,
+      "unitName": "广西电网公司贵港供电局",
+      "unitDress": "贵港市达开路89号",
+      "pop": "杨昆",
+      "phone": "13978583259",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 17,
+      "unitName": "中国邮政集团公司贵港市分公司",
+      "unitDress": "市辖区中山路北路9号",
+      "pop": "覃一奕",
+      "phone": "13397855832",
+      "unitType": "一般单位"
+    },
+    {
+      "id": 18,
+      "unitName": "中国华电集团贵港发电有限公司",
+      "unitDress": "广西贵港市华电路1号",
+      "pop": "刘景军",
+      "phone": "15077599865",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 19,
+      "unitName": "贵港市港北区宏桂广场皇冠假日酒店",
+      "unitDress": "贵港市港北区新世纪广场东侧4#、（5#楼不归酒店）",
+      "pop": "吴国亮",
+      "phone": "18907855513",
+      "unitType": "重点单位"
+    },
+    {
+      "id": 20,
+      "unitName": "贵港市体育中心",
+      "unitDress": "贵港市荷城路与迎宾路交汇处",
+      "pop": "李品",
+      "phone": "13878592388",
+      "unitType": "重点单位"
+    }
+  ],
+  "unitChangeList": [
+    {
+      "id": 1,
+      "label": "单位名称",
+      "type": "input",
+      "value": "广西电网公司贵港供电局"
+    },
+    {
+      "id": 2,
+      "label": "地区",
+      "type": "select",
+      "value": "3",
+      "options": [
+        {
+          "id": "1",
+          "label": "市辖区"
+        },
+        {
+          "id": "2",
+          "label": "港北区"
+        },
+        {
+          "id": "3",
+          "label": "港南区"
+        },
+        {
+          "id": "4",
+          "label": "覃塘区"
+        },
+        {
+          "id": "5",
+          "label": "平南县"
+        },
+        {
+          "id": "6",
+          "label": "桂平市"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "建筑图片",
+      "type": "upload",
+      "value": [
+        {
+          "name": "[Y}J0}]PV3X$VX3`Y~UV]4Y.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "联系人",
+      "type": "input",
+      "value": "杨昆"
+    },
+    {
+      "id": 5,
+      "label": "负责人电话",
+      "type": "input",
+      "value": "13978583259"
+    },
+    {
+      "id": 6,
+      "label": "单位类型",
+      "type": "select",
+      "value": "2",
+      "options": [
+        {
+          "id": "1",
+          "label": "一般单位"
+        },
+        {
+          "id": "2",
+          "label": "重点单位"
+        },
+        {
+          "id": "3",
+          "label": "高危单位"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "单位地址",
+      "type": "input",
+      "value": "贵港市达开路89号"
+    },
+    {
+      "id": 8,
+      "label": "经纬度",
+      "type": "input",
+      "value": "109.617981,23.095475"
+    },
+    {
+      "id": 9,
+      "label": "成立时间",
+      "type": "timer",
+      "value": "2018-12-24"
+    },
+    {
+      "id": 10,
+      "label": "法定代表人证件号",
+      "type": "input",
+      "value": ""
+    },
+    {
+      "id": 11,
+      "label": "单位简介",
+      "type": "input",
+      "value": ""
+    }
+  ],
+  "socialUnitEcharts": [
+    {
+      "id": "1",
+      "name": "一般单位",
+      "num": 69
+    },
+    {
+      "id": "2",
+      "name": "重点单位",
+      "num": 38
+    },
+    {
+      "id": "3",
+      "name": "高危单位",
+      "num": 4
     }
   ]
 }

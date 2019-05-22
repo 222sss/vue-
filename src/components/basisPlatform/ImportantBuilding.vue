@@ -99,7 +99,7 @@ import {
   dataIsNullNumber,
   initECharts
 } from "@/utils/tool";
-import { importantBuilding } from "@/utils/api";
+import { allData } from "@/utils/api";
 import ButtonLink from "@/components/ButtonLink.vue";
 import { MessageBox } from "element-ui";
 import ChangeDialog from "components/layout/ChangeDialog";
@@ -204,7 +204,7 @@ export default {
       // 选中标签
       tabKey: "buildInfo",
       // 修改内容
-      changes: data.changeList,
+      changes: data.buildingChangeList,
       // echarts
       buildEcharts: null
     };
@@ -230,7 +230,7 @@ export default {
     getData: function() {
       // echarts配置
       let option = {};
-      importantBuilding().then(res => {
+      allData().then(res => {
         if (res.data.code == 200) {
           // 表格
           const data = dataIsNullArray(res.data.buildingHomeTable);

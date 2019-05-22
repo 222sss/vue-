@@ -54,7 +54,7 @@
           background
           v-bind:total="tableDataTotal"
           v-bind:page-size="tablePageSize"
-          v-bind:page-sizes="[2, 4, 8, 10]"
+          v-bind:page-sizes="[2, 5, 8, 10]"
           v-bind:current-page.sync="tablePageNo"
           layout="prev, pager, next, total, jumper, sizes"
           @size-change="handleSizeChange"
@@ -98,9 +98,9 @@ import {
   calcTableMaxHeight,
   initECharts
 } from "@/utils/tool";
-import { socialUnit } from "@/utils/api";
+import { allData } from "@/utils/api";
 import TableEL from "components/TableEL";
-import data from "../../utils/socialUnit";
+import data from "../../utils/basisPlatform";
 import ButtonLink from "@/components/ButtonLink.vue";
 import { MessageBox } from "element-ui";
 import ChangeDialog from "components/layout/ChangeDialog";
@@ -187,7 +187,7 @@ export default {
       // 分页当前页码
       tablePageNo: 1,
       // 分页每页显示记录数
-      tablePageSize: 2,
+      tablePageSize: 5,
       // 数据暂存
       tableMockData: [],
       // 详情
@@ -204,7 +204,7 @@ export default {
       // 选中标签
       tabKey: "unit",
       // 修改内容
-      changes: data.changeList,
+      changes: data.unitChangeList,
       // echarts
       socialUnitEcharts: null
     };
@@ -218,7 +218,7 @@ export default {
     getData: function() {
       // echarts配置
       let option = {};
-      socialUnit().then(res => {
+      allData().then(res => {
         if (res.data.code == 200) {
           // 表格
           const data = dataIsNullArray(res.data.socialUnitTable);
