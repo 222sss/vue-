@@ -2,10 +2,10 @@
 <template>
   <div v-bind:class="['echarts-table', 'w100', 'h100', diyClass]">
     <div class="content w100">
-      <div class="echarts-box w100">
+      <div v-if="this.$slots.echarts" class="echarts-box w100">
         <slot name="echarts"></slot>
       </div>
-      <div class="table-box w100">
+      <div v-if="this.$slots.table_content" class="table-box w100">
         <div class="w100 table">
           <slot name="table_content"></slot>
         </div>
@@ -13,6 +13,7 @@
           <slot name="table_pagination_content"></slot>
         </div>
       </div>
+      <slot></slot>
     </div>
   </div>
 </template>

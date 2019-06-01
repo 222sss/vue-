@@ -11,7 +11,7 @@
       </template>
       <template slot="table_content">
         <table-e-l
-          v-bind:ref-name="'unit-echarts'"
+          v-bind:ref-name="'unit-table'"
           v-bind:isLoading="tableLoading"
           v-bind:max-height="tableMaxHeight"
           v-bind:columns="tableColumns"
