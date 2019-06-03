@@ -113,6 +113,17 @@ export function dataIsNullArray(data, def = []) {
 export function dataIsNullNumber(data, def = 0) {
   return data !== undefined && data !== null && data !== "" ? data : def;
 }
+/**
+ * 判断字符串数据是否为空
+ *
+ * @export
+ * @param {*} data 数据
+ * @param {string} [def=""] 默认值
+ * @returns
+ */
+export function dataIsNullStr(data, def = "") {
+  return data !== undefined && data !== null ? data : def;
+}
 
 //////////////////// ECharts //////////////////////////////////
 /**

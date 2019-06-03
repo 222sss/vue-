@@ -594,5 +594,336 @@
       "phone": "037*******010",
       "evaluate": "优"
     }
+  ],
+  "manufacturerEcharts": [
+    {
+      "id": "1",
+      "name": "陕西坚瑞沃能股份有限公司",
+      "num": 5
+    },
+    {
+      "id": "2",
+      "name": "深圳市赋安安全系统有限公司",
+      "num": 6
+    },
+    {
+      "id": "3",
+      "name": "黑龙江云龙消防器材实业开发有限公司",
+      "num": 13
+    },
+    {
+      "id": "4",
+      "name": "深圳市泰和安科技有限公司",
+      "num": 15
+    },
+    {
+      "id": "5",
+      "name": "江西建豪消防设备有限公司",
+      "num": 16
+    },
+    {
+      "id": "6",
+      "name": "河南汉威电子股份有限公司",
+      "num": 18
+    }
+  ],
+  "manufacturerChangeList": [
+    {
+      "id": 1,
+      "label": "厂家名称",
+      "type": "input",
+      "value": "深圳市赋安安全系统有限公司"
+    },
+    {
+      "id": 2,
+      "label": "地区",
+      "type": "select",
+      "value": "3",
+      "options": [
+        {
+          "id": "1",
+          "label": "市辖区"
+        },
+        {
+          "id": "2",
+          "label": "港北区"
+        },
+        {
+          "id": "3",
+          "label": "港南区"
+        },
+        {
+          "id": "4",
+          "label": "覃塘区"
+        },
+        {
+          "id": "5",
+          "label": "平南县"
+        },
+        {
+          "id": "6",
+          "label": "桂平市"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "类型",
+      "type": "select",
+      "value": "2",
+      "options": [
+        {
+          "id": "1",
+          "label": "自动灭火类"
+        },
+        {
+          "id": "2",
+          "label": "火灾报警类"
+        },
+        {
+          "id": "3",
+          "label": "消防器材及装备"
+        },
+        {
+          "id": "4",
+          "label": "防火建材"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "单位地址",
+      "type": "input",
+      "value": "深圳市深南中路上步大厦21层"
+    },
+    {
+      "id": 5,
+      "label": "联系人",
+      "type": "input",
+      "value": "张荔"
+    },
+    {
+      "id": 6,
+      "label": "联系电话",
+      "type": "input",
+      "value": "13556183019"
+    },
+    {
+      "id": 7,
+      "label": "主营产品",
+      "type": "input",
+      "value": "可燃气体报警产品"
+    },
+    {
+      "id": 8,
+      "label": "市场占比",
+      "type": "input",
+      "value": "6"
+    },
+    {
+      "id": 9,
+      "label": "经纬度",
+      "type": "input",
+      "value": "109.617981,23.095475"
+    }
+  ],
+  "agencyTable": [
+    {
+      "id": 1,
+      "name": "深圳市赋安安全系统有限公司",
+      "type": "火灾报警类",
+      "grade": "可燃气体报警产品",
+      "time": "可燃气体报警产品",
+      "dress": "深圳市深南中路上步大厦21层",
+      "pop": "张荔",
+      "phone": "13556183019"
+    }
+  ],
+  "agencyEcharts": [
+    {
+      "id": "1",
+      "name": "消防设施维护保养检查机构",
+      "num": 3
+    },
+    {
+      "id": "2",
+      "name": "消防安全评估机构",
+      "num": 0
+    },
+    {
+      "id": "3",
+      "name": "一级保养检查机构",
+      "num": 1
+    },
+    {
+      "id": "4",
+      "name": "二级保养检查机构",
+      "num": 2
+    },
+    {
+      "id": "5",
+      "name": "三级保养检查机构",
+      "num": 0
+    },
+    {
+      "id": "6",
+      "name": "一级安全评估机构",
+      "num": 0
+    },
+    {
+      "id": "7",
+      "name": "二级安全评估机构",
+      "num": 0
+    }
+  ],
+  "agencyChangeList": [
+    {
+      "id": 1,
+      "label": "公司名称",
+      "type": "input",
+      "value": "广西森安消防设施维护保养有限公司（平南办事处)"
+    },
+    {
+      "id": 2,
+      "label": "地区",
+      "type": "select",
+      "value": "3",
+      "options": [
+        {
+          "id": "1",
+          "label": "市辖区"
+        },
+        {
+          "id": "2",
+          "label": "港北区"
+        },
+        {
+          "id": "3",
+          "label": "港南区"
+        },
+        {
+          "id": "4",
+          "label": "覃塘区"
+        },
+        {
+          "id": "5",
+          "label": "平南县"
+        },
+        {
+          "id": "6",
+          "label": "桂平市"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "类型",
+      "type": "select",
+      "value": "2",
+      "options": [
+        {
+          "id": "1",
+          "label": "消防设施维护保养检查机构"
+        },
+        {
+          "id": "2",
+          "label": "消防安全评估机构"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "操作人员数量",
+      "type": "input",
+      "value": "4"
+    },
+    {
+      "id": 5,
+      "label": "图片",
+      "type": "upload",
+      "value": [
+        {
+          "name": "[Y}J0}]PV3X$VX3`Y~UV]4Y.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "label": "中高级操作员数量",
+      "type": "input",
+      "value": ""
+    },
+    {
+      "id": 7,
+      "label": "办公面积",
+      "type": "input",
+      "value": ""
+    },
+    {
+      "id": 8,
+      "label": "以及工程师人数",
+      "type": "input",
+      "value": ""
+    },
+    {
+      "id": 9,
+      "label": "法人代表",
+      "type": "input",
+      "value": ""
+    },
+    {
+      "id": 10,
+      "label": "联系电话",
+      "type": "input",
+      "value": "135*****281"
+    },
+    {
+      "id": 11,
+      "label": "单位地址",
+      "type": "input",
+      "value": "平南县平南镇二环路"
+    },
+    {
+      "id": 12,
+      "label": "注册资本",
+      "type": "input",
+      "value": "401万"
+    },
+    {
+      "id": 13,
+      "label": "资质等级",
+      "type": "input",
+      "value": "2"
+    },
+    {
+      "id": 14,
+      "label": "联系人",
+      "type": "input",
+      "value": ""
+    },
+    {
+      "id": 15,
+      "label": "取得时间",
+      "type": "input",
+      "value": "2017-10-09"
+    },
+    {
+      "id": 16,
+      "label": "联系电话",
+      "type": "input",
+      "value": "13523513281"
+    },
+    {
+      "id": 17,
+      "label": "注册消防工程师人数",
+      "type": "input",
+      "value": ""
+    },
+    {
+      "id": 18,
+      "label": "经纬度",
+      "type": "input",
+      "value": "109.617981,23.095475"
+    }
   ]
 }

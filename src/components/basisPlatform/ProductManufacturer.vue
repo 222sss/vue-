@@ -31,11 +31,13 @@
                 v-bind:data="scope"
                 v-bind:diy-class="'buttonlink_red'"
                 v-bind:text="'修改'"
+                @click="changeData"
               ></button-link>
               <button-link
                 v-bind:data="scope"
                 v-bind:diy-class="'buttonlink_red'"
                 v-bind:text="'删除'"
+                @click="deleteF"
               ></button-link>
             </template>
           </el-table-column>
@@ -55,6 +57,24 @@
         </el-pagination>
       </template>
     </echarts-table>
+    <el-dialog
+      element-loading-text="拼命加载中"
+      element-loading-spinner="el-icon-loading"
+      element-loading-background="rgba(0, 0, 0, 0.5)"
+      v-bind:visible.sync="changeDialog"
+      width="600px"
+      v-bind:custom-class="'dialog dialog-paddingzero'"
+      top="200px"
+      v-bind:title="'修改'"
+      v-bind:close-on-click-modal="false"
+    >
+      <change-dialog
+        ref="changeDialog"
+        v-bind:tabs="tabs"
+        v-bind:tabKey="tabKey"
+        v-bind:changes="changes"
+      ></change-dialog>
+    </el-dialog>
   </div>
 </template>
 
@@ -64,17 +84,23 @@ import TableEL from "components/TableEL";
 import {
   calcTableMaxHeight,
   dataIsNullArray,
-  dataIsNullNumber
+  dataIsNullNumber,
+  dataIsNullStr,
+  initECharts
 } from "@/utils/tool";
 import ButtonLink from "@/components/ButtonLink.vue";
 import { allData } from "@/utils/api";
+import ChangeDialog from "components/layout/ChangeDialog";
+import data from "../../utils/basisPlatform";
+import { MessageBox } from "element-ui";
 
 export default {
   name: "ProductManufacturer",
   components: {
     EchartsTable,
     TableEL,
-    ButtonLink
+    ButtonLink,
+    ChangeDialog
   },
   data: function() {
     return {
@@ -172,7 +198,22 @@ export default {
       // 分页每页显示记录数
       tablePageSize: 5,
       // 数据暂存
-      tableMockData: []
+      tableMockData: [],
+      // echarts
+      productEcharts: null,
+      // 修改
+      changeDialog: false,
+      // 修改tab
+      tabs: [
+        {
+          key: "product",
+          text: "产品厂家"
+        }
+      ],
+      // 选中标签
+      tabKey: "product",
+      // 修改内容
+      changes: data.manufacturerChangeList
     };
   },
   methods: {
@@ -182,6 +223,8 @@ export default {
     },
     // 获取数据
     getData: function() {
+      // echarts配置
+      let option = {};
       allData().then(res => {
         if (res.data.code == 200) {
           // 表格
@@ -200,6 +243,52 @@ export default {
           });
           this.tableDataTotal = dataIsNullNumber(this.tableMockData.length);
           this.searchTable();
+          // echarts
+          const echartsData = dataIsNullArray(res.data.manufacturerEcharts);
+          option = {
+            color: ["#11aafd", "#d63e41", "#25c65d"],
+            tooltip: {
+              show: true
+            },
+            legend: {
+              orient: "vertical",
+              top: "10%",
+              left: "2%",
+              itemGap: 10,
+              data: [],
+              textStyle: {
+                color: "#fff"
+              }
+            },
+            series: [
+              {
+                name: "",
+                type: "pie",
+                radius: "70%",
+                center: ["50%", "50%"],
+                triggerEvent: true,
+                data: [],
+                itemStyle: {
+                  emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: "rgba(0, 0, 0, 0.5)"
+                  }
+                }
+              }
+            ]
+          };
+          echartsData.map(res => {
+            option.legend.data.push(dataIsNullStr(res.name, "未知"));
+            option.series[0].data.push({
+              value: res.num,
+              name: res.name
+            });
+          });
+          this.productEcharts = initECharts(
+            document.getElementById("productEcharts"),
+            option
+          );
         }
       });
     },
@@ -242,9 +331,40 @@ export default {
       this.tableLoading = true;
       this.searchTable(this.tablePageNo);
     },
+    // 打开修改
+    changeData: function(data) {
+      this.changeDialog = true;
+      const changeDialog = this.$refs["changeDialog"];
+      if (changeDialog && typeof changeDialog.recover === "function") {
+        changeDialog.recover();
+      }
+      // eslint-disable-next-line
+      console.log(data);
+    },
+    // 删除
+    deleteF: function(data) {
+      // eslint-disable-next-line
+      console.log(data);
+      MessageBox.confirm("是否删除？", "删除", {
+        closeOnClickModal: false,
+        confirmButtonText: "确定",
+        cancelButtonText: "取消",
+        customClass: "messagebox",
+        type: "warning"
+      })
+        .then(() => {
+          this.$root.showMessage("success", "删除成功!");
+        })
+        .catch(() => {
+          return;
+        });
+    },
     // 触发页面改变大小
     callResize: function() {
       this.getTableMaxHeight();
+      if (this.productEcharts) {
+        this.productEcharts.resize();
+      }
     }
   },
   mounted: function() {
